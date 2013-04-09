@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Wen-bing's Blog]]></title>
+  <link href="http://wen-bing.github.com/atom.xml" rel="self"/>
+  <link href="http://wen-bing.github.com/"/>
+  <updated>2013-04-09T13:46:28+08:00</updated>
+  <id>http://wen-bing.github.com/</id>
+  <author>
+    <name><![CDATA[wen-bing]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[jekyll blog]]></title>
+    <link href="http://wen-bing.github.com/blog/2013/04/09/jekyll-blog/"/>
+    <updated>2013-04-09T13:33:00+08:00</updated>
+    <id>http://wen-bing.github.com/blog/2013/04/09/jekyll-blog</id>
+    <content type="html"><![CDATA[<h3>Jekyll Blog</h3>
+
+<p>Hello, I&#8217;m moving to Jekyll blog.</p>
+
+<p>Here is a test.</p>
+]]></content>
+  </entry>
+  
+</feed>
