@@ -1,23 +1,26 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+---
+layout: none
+---
+<?xml version="1.0" encoding="utf-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://wen-bing.github.com/blog/2013/04/09/introduce-scrum/</loc>
-        <lastmod>2013-04-09T15:11:41+08:00</lastmod>
+        <loc>{{ site.url }}/</loc>
+        <priority>1.0</priority>
     </url>
     <url>
-        <loc>http://wen-bing.github.com/blog/2013/04/09/jekyll-blog/</loc>
-        <lastmod>2013-04-09T15:08:55+08:00</lastmod>
+        <loc>{{ site.url }}/archives.html</loc>
+        <priority>0.6</priority>
     </url>
     <url>
-        <loc>http://wen-bing.github.com/blog/archives/</loc>
-        <lastmod>2013-04-09T15:11:41+08:00</lastmod>
+        <loc>{{ site.url }}/tags.html</loc>
+        <priority>0.6</priority>
     </url>
     <url>
-        <loc>http://wen-bing.github.com/</loc>
-        <lastmod>2013-04-09T15:11:41+08:00</lastmod>
+        <loc>{{ site.url }}/archives.html</loc>
+        <priority>0.6</priority>
     </url>
     <url>
-        <loc>http://wen-bing.github.com/robots.txt</loc>
-        <lastmod>2013-04-09T12:55:45+08:00</lastmod>
+        <loc>{{ site.url }}/about.html</loc>
+        <priority>0.6</priority>
     </url>
 </urlset>
