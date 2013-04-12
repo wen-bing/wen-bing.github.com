@@ -4,6 +4,7 @@ title: "Scrum 简介"
 date: 2013-04-09 22:11
 comments: true
 categories: blog
+tags: [Agile, Scrum]
 ---
 
 ###Scrum简介 

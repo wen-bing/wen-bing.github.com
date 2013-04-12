@@ -3,7 +3,8 @@ layout: post
 title: "在Github上托管个人blog"
 date: 2013-04-08 13:33
 comments: true
-categories: Jekyll 
+categories: blog
+tags: [Jekyll] 
 ---
 
 [Github](http://pages.github.com)提供的Pages服务可以把相关的静态文件组合成一个博客站点。它不需要数据库，使用Git来管理博客的版本。你在本地写好文章（无需网络链接），在本地预览的文章效果，提交到Git仓库。发布文章的时候只需要Git Push一下就可以了。Github Pages是免费的，不限流量，而且速度非常快。
