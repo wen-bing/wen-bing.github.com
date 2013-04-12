@@ -5,7 +5,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://wen-bing.com
+url: http://wen-bing.github.io
 title: Wenbin's Blog
 subtitle: A Programmer's Blog
 author: Wenbin Ma
@@ -62,10 +62,16 @@ github_skip_forks: true
 # Twitter
 twitter_user: wun-bing
 twitter_tweet_count: 8 
-twitter_show_replies: true
-twitter_follow_button: true
-twitter_show_follower_count: true
+twitter_show_replies: false
+twitter_follow_button: false
+twitter_show_follower_count: false
 twitter_tweet_button: true
+
+#JiaThis Sharing 
+jiathis_share_button: true
+
+#Show Weibo
+weibo_msg: false
 
 # Google +1
 google_plus_one: true
