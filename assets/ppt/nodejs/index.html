@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<!-- Mirrored from github.catchen.me/nodejs-introduction-slides/ by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 11 Apr 2013 12:07:12 GMT -->
+	<head>
+		<title>Node.js Introduction</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=1234, user-scalable=no">
+		<link rel="stylesheet" href="themes/ribbon/styles/style.css">
+		<style>
+			/*#Cover H2 {
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				}*/
+		</style>
+	</head>
+	<body class="list">
+		<header class="caption">
+			<h1>Node.js Introduction</h1>
+			<p>Wenbin Ma</p>
+		</header>
+		<div class="slide bg" id="Cover"><div>
+			<section>
+				<header>
+					<h2></h2>
+				</header>
+				<a href="http://www.nodejs.org" target="blank">
+				<img src="pictures/nodejs.png" alt="">
+				</a>
+			</section>
+		</div></div>
+		<div class="slide" id="Outline"><div>
+			<section>
+				<header>
+					<h2>Outline</h2>
+				</header>
+				<ul>
+					<li>History and Background</li>
+					<li>Installation</li>
+					<li>Features
+						<ul>
+							<li>Async non-blocked I/O</li>
+							<li>Event Driven</li>
+							<li>CommonJS</li>
+						</ul>
+					</li>
+					<li>Libraries and Framework</li>
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="WhatNodeJs"><div>
+			<section>
+				<header>
+					<h2>What's Node.js</h2>
+				</header>
+				<a href="http://www.nodejs.org" target="blank">
+					<img src="pictures/logo.png" style="background-color: black;">
+				</a>
+				<p>Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an <strong>event-driven</strong>, <strong>non-blocking I/O model</strong> that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</p>
+			</section>
+		</div></div>
+		<div class="slide" id="Background"><div>
+			<section>
+				<header>
+					<h2>Background</h2>
+				</header>
+				<ul>
+					<li>Chrome's Javascript runtime is an open souce fastest javascript engine, called V8</li>
+					<li>Node.js run on V8</li>
+					<li>Create by <strong>Ray Daul</strong> in 2009</li>
+					<img src="pictures/RayDahl.png" widht="230" height="170">
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="BackgroundAchitecture"><div>
+			<section>
+				<header>
+					<h2>Background-Achitecture</h2>
+				</header>
+				<ul>
+					<li>libev(event loop)</li>
+					<li>libeio(non-block thread pool)</li>
+					<li>V8(Javascript engine)</li>
+					<img src="pictures/nodejsarch.png">
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="Installation"><div>
+			<section>
+				<header>
+					<h2>Installation</h2>
+				</header>
+				<ul>
+					<li><a href="http://nodejs.org/download/" target="blank">Windows Installer</a></li>
+					<li>Editor
+						<ul>
+							<li><a href="http://www.sublimetext.com/" target="blank">Sublime</a></li>
+							<li>Visual Studio</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="Features"><div>
+			<section>
+				<header>
+					<h2>Features</h2>
+				</header>
+				<ul>
+					<li>Non-blocking I/O</li>
+					<li>Event Driven</li>
+					<li>CommonJS</li>
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="blockedio"><div>
+			<section>
+				<header>
+					<h2>Blocked I/O</h2>
+				</header>
+<pre>
+<code>var data = file.read('file.data');</code>
+<code>//waiting for read to complete...</code>
+<code>doSomething(data)</code>
+</pre>
+				<p>Problem is blocked by I/O operation</p>
+			</section>
+		</div></div>
+		<div class="slide" id="blockio_pic"><div>
+			<section>
+				<header>
+					<h2>Blocked I/O</h2>
+				</header>	
+				<img src="pictures/blockio.png" style="text-align:center;">
+			</section>
+		</div></div>
+
+		<div class="slide" id="nonblockingio"><div>
+			<section>
+				<header>
+					<h2>Non-blocking I/O</h2>
+				</header>
+<pre>
+<code>file.read('file.data', function(data){</code>
+<code>	doSomethingWithData(data);</code>
+<code>}</code>
+<code>doOtherThingWhileReadingData();</code>
+</pre>
+				<p>Program doing otherthings while reading data, back to handle data through callback</p>
+			</section>
+		</div></div>
+		<div class="slide" id="nonblockio_pic"><div>
+			<section>
+				<header>
+					<h2>Non-blocking I/O</h2>
+				</header>	
+				<img src="pictures/nonblockio.png" style="text-align:center;">
+			</section>
+		</div></div>
+
+		<div class="slide" id="EventDriven"><div>
+			<section>
+				<header>
+					<h2>Node.js Event</h2>
+				</header>
+				<ul>
+					<li>Support async Event like Ajax</li>
+					<li>Derived from events.EventEmitter</li>
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="EventDrivenExamples"><div>
+			<section>
+				<header>
+					<h2>Node.js Event Example</h2>
+				</header>
+<pre>
+<code>var req = http.request(options, function (res) {</code>
+<code>    console.log('STATUS: ' + res.statusCode);</code>
+<code>    console.log('HEADERS: ' + JSON.stringify(res.headers));</code>
+<code>    res.setEncoding('utf8');</code>
+<code>    res.on('data', function (chunk) {</code>
+<code>        console.log('BODY: ' + chunk);</code>
+<code>    });</code>
+<code>});</code>
+</pre>
+			</section>
+		</div></div>
+		<div class="slide" id="EventDrivenDemo"><div>
+			<section>
+				<header>
+					<h2>Node.js Event Demo</h2>
+				</header>
+				<ul>
+					<li>Demo1: emit and handle events</li>
+					<li>Demo2: custom events.EventEmitter</li>
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="CommonJS"><div>
+			<section>
+				<header>
+					<h2>Node.js and CommonJs</h2>
+				</header>
+				<ul>
+					<li>CommonJs specified JS standard library</li>
+					<li>Node.js implemented CommonJs specification</li>
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="ModuleAndPackage"><div>
+			<section>
+				<header>
+					<h2>Module And Package</h2>
+				</header>
+				<ul>
+					<li>Each js file is a module</li>
+					<li>Variables outside the file cannot visible except their are global or exported</li>
+					<li>Use <code>module.exports</code> to write modules</li>
+					<li>Use <code>require('fs')</code> to import fs module</li>
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="ModuleAndPackage2"><div>
+			<section>
+				<header>
+					<h2>Module And Package 2</h2>
+				</header>
+				<ul>
+					<li>Package is a group of a modules</li>
+					<li>Package metadata is defined in package.json</li>
+					<li>package.json in the root of a package dir</li>
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="ModuleAndPackage3"><div>
+			<section>
+				<header>
+					<h2>NPM - manage packages</h2>
+				</header>
+				<ul>
+					<li>find a package: search in npm.org</li>
+					<li>install package: <code>npm install package_name</code></li>
+					<li>npm installed package in current dir: ./node_modules/</li>
+					<li>npm install -g, install package to global node_modules dir</li>
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="ModulesPackages"><div>
+			<section>
+				<header>
+					<h2>Modules and Packages</h2>
+				</header>
+				<ul>
+					<li><a href="http://nodejs.org/api/http.html" target="blank">Http Module</a></li>
+					<li><a href="http://expressjs.com/" target="blank">Express</a></li>
+					<li><a href="http://towerjs.org/" target="blank">Tower.js</a></li>
+					<li><a href="https://github.com/caolan/async" target="blank">async</a></li>
+					<li><a href="http://socket.io/" target="blank">socket.io</a></li>
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="Http Module"><div>
+			<section>
+				<header>
+					<h2>Http Module-create http server</h2>
+				</header>
+				<ul>
+<pre>
+<code>var http = <mark>require('http');</mark></code>
+<code>var server = <mark>http.createServer</mark>(function(request, response) {</code>
+<code>    response.write('Hello, world!');</code>
+<code>    response.end();</code>
+<code>});</code>
+<code>var port = 3500;</code>
+<code>server.listen(port);</code>
+<code>console.log("server listen on port: " + port);</code>
+</pre>
+			</section>
+		</div></div>
+		<div class="slide" id="ExpressJS"><div>
+			<section>
+				<header>
+					<h2>What Express.js can do</h2>
+				</header>
+				<ul>
+					<li>Routing</li>
+					<li>Middleware
+						<ul>
+							<li>Logger</li>
+							<li>Body Parser</li>
+							<li>Method Override</li>
+							<li>Cookie Paser</li>
+							<li>Session</li>
+						</ul>
+					</li>
+					<li>Templating Engine</li>
+					<li>Static Content</li>
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="TowerJS"><div>
+			<section>
+				<header>
+					<h2>Towser.js</h2>
+				</header>
+				<ul>
+					<li>Full stack web application framework</li>
+					<li>based on Coffeescript</li>
+					<li>more like Rail's framework</li>
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="asyncjs"><div>
+			<section>
+				<header>
+					<h2>async.js</h2>
+				</header>
+				<ul>
+				<li>Utils module to help avoid callback nessted</li>
+				<li>Demo</li>
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="SocketIO"><div>
+			<section>
+				<header>
+					<h2>Socket.io</h2>
+				</header>
+				<ul>
+					<li>Used to make realtime apps</li>
+					<li>Blurring the differences between the different transport mechanisms</li>
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="CheckThisOut"><div>
+			<section>
+				<header>
+					<h2>Check this out!</h2>
+				</header>
+				<ul>
+					<li>
+						<a href="http://howtonode.org/" target="blank">How to Node</a>
+						/
+						<a href="http://nodeguide.com/" target="blank">Node Guid</a>
+						/
+						<a href="http://www.nodebeginner.org/" target="blank">The Node Beginner Book</a>
+					</li>
+					<li>
+						<a href="http://expressjs.com/" target="_blank">Express.js</a>
+						/
+						<a href="http://senchalabs.github.com/connect/" target="_blank">Connect</a>
+					</li>
+					<li>
+						<a href="http://nowjs.com/" target="_blank">nowjs</a>
+						/
+						<a href="http://socket.io/" target="_blank">Socket.IO</a>
+					</li>
+					<li>
+						<a href="http://documentcloud.github.com/backbone/" target="_blank">Backbone.js</a>
+						&amp;
+						<a href="http://documentcloud.github.com/underscore/" target="_blank">Underscore.js</a>
+					</li>
+					<li>
+						<a href="http://jashkenas.github.com/coffee-script/" target="_blank">CoffeeScript</a>
+					</li>
+				</ul>
+			</section>
+		</div></div>
+		<div class="slide" id="END"><div>
+			<section>
+				<header>
+					<h2>Review</h2>
+				</header>
+				<ul>
+					<li>Node history and background</li>
+					<li>Node key features
+						<ul>
+							<li>non-blocking I/O</li>
+							<li>event driven</li>
+							<li>module and packages</li>
+						</ul>
+					</li>
+					<li>introduce some node module and packages</a></li>
+				</ul>	
+			</section>
+		</div></div>
+		<div class="progress"><div></div></div>
+		<script src="scripts/script.js"></script>
+	</html>
