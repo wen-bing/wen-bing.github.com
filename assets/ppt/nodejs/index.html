@@ -118,12 +118,17 @@
 				<header>
 					<h2>Blocked I/O</h2>
 				</header>
+				<ul>
+					<li><strong>All I/Os are expensive</strong></li>
+					<li>Program is blocked by I/O operation</li>
+					<li>Thread is used to make program paralle</li>
+					<li>Thread context swtiching is expensive</li>
+				</ul>
 <pre>
 <code>var data = file.read('file.data');</code>
 <code>//waiting for read to complete...</code>
 <code>doSomething(data)</code>
 </pre>
-				<p>Problem is blocked by I/O operation</p>
 			</section>
 		</div></div>
 		<div class="slide" id="blockio_pic"><div>
@@ -140,13 +145,17 @@
 				<header>
 					<h2>Non-blocking I/O</h2>
 				</header>
+				<ul>
+					<li>Program returned immediately, continue execute</li>
+					<li>Program has an event loop</li>
+					<li>Program informed when data ready event emitted, through callback<li> 
+				</ul>
 <pre>
 <code>file.read('file.data', function(data){</code>
 <code>	doSomethingWithData(data);</code>
 <code>}</code>
 <code>doOtherThingWhileReadingData();</code>
 </pre>
-				<p>Program doing otherthings while reading data, back to handle data through callback</p>
 			</section>
 		</div></div>
 		<div class="slide" id="nonblockio_pic"><div>
@@ -164,6 +173,7 @@
 					<h2>Node.js Event</h2>
 				</header>
 				<ul>
+					<li>Key feature of Node.js</li>
 					<li>Support async Event like Ajax</li>
 					<li>Derived from events.EventEmitter</li>
 				</ul>

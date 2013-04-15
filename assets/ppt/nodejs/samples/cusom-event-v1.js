@@ -55,15 +55,12 @@ function barHandler(data)
 	console.log(data);
 }
 
-function barHandler2(data)
-{
-	console.log("I'm another bar handler");
-}
-
 var eventer = new Eventer();
 eventer.on('foo', fooHandler);
 eventer.on('bar', barHandler);
-eventer.on('bar', barHandler2);
+eventer.on('bar', function(data){
+	console.log("I'm another bar handler");
+});
 
 eventer.foo();
 eventer.bar();
