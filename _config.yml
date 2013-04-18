@@ -102,3 +102,6 @@ disqus_aside_comment_excerpt_length: 200
 
 # Facebook Like
 facebook_like: false
+
+#show friend's link
+friends_link: true
