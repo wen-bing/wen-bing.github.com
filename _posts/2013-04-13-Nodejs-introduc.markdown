@@ -3,7 +3,8 @@ layout: post
 title: "Node.js 介绍"
 date: 2013-04-13
 comments: true
-categories: Node.js 
+categories: Node.js
+description: "介绍Node.js的基本概念， Node.js的历史和背景知识， Node.js的Module和包的管理方式，Node.js对CommonJS的支持， NPM"
 tags: [Node.js, Javascript]
 ---
 

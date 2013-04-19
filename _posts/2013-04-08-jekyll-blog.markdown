@@ -4,6 +4,7 @@ title: "在Github上托管个人blog"
 date: 2013-04-08 13:33
 comments: true
 categories: blog
+description: "了解如何在Github Pages中使用Jekyll,搭建个人博客。如何配置Jekylly,如何发布博客"
 tags: [Jekyll] 
 ---
 

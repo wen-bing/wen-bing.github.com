@@ -3,6 +3,7 @@ layout: post
 title: "浏览器插件(Plugins)开发 - I"
 date: 2013-04-17
 comments: true
+description: "介绍NPAPI开发浏览器插件的基本概念， 什么是NPAPI, 浏览器插件是如何工作的"
 categories: NPAPI Plugin
 tags: [Webkit, NPAPI, plugin]
 ---

@@ -4,6 +4,7 @@ title: "Scrum 简介"
 date: 2013-04-09 22:11
 comments: true
 categories: blog
+description: "介绍Scrum的流程, Scrum中的角色，Scrum中的各项活动的介绍，解释"
 tags: [Agile, Scrum]
 ---
 
