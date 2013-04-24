@@ -8,7 +8,7 @@
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
   <meta name="keywords" content="{{ site.keywords }}" />
   <meta name="author" content="{{ site.author }}">
-
+  <meta property="wb:webmaster" content="0e226dc037dee034" />
   {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
   <meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
   {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
