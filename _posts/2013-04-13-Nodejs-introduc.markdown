@@ -12,7 +12,7 @@ tags: [Node.js, Javascript]
 你也可以直接在本页查看，翻页： <-/PgUp, ->/PgDn
 
 <div>
-<iframe src="/assets/ppt/nodejs/index.html?full#Cover" width="800" height="600" frameborder="0"> </iframe>
+<iframe src="/assets/ppt/nodejs/index.html" width="800" height="600" frameborder="0"> </iframe>
 </div>
 
 
