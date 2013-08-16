@@ -64,7 +64,7 @@ Jekyll在处理中文的时候会有问题，解决方法：
 
 在你的repo目录下，运行
 ```
-rake --server
+jekyll --server
 ```
 ，然后再在浏览器里访问[localhost:4000](http://localhost:4000)，就可以看到你的博客网站了。
 

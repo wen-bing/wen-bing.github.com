@@ -11,7 +11,7 @@ subtitle: A Programmer's Blog
 author: Wenbin Ma
 simple_search: http://google.com/search
 description: 
-keywords: node.js, javascript, git, webkit, npapi, V8, browser, html, linux, debian, Android, C, C++, Qt, ruby, NO SQL, mongodb
+keywords: node.js, javascript, git, webkit, npapi, V8, browser, html, linux, debian, Android, C, C++, Qt,  NO SQL, mongodb
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -40,7 +40,7 @@ auto: true
 #root: /
 permalink: /blog/:year-:month-:day/:title/
 plugins: plugins
-markdown: kramdown
+markdown: rdiscount
 pygments: false # default python pygments have been replaced by pygments.rb
 
 paginate: 8          # Posts per page on the blog index
@@ -66,7 +66,7 @@ twitter_tweet_count: 8
 twitter_show_replies: false
 twitter_follow_button: false
 twitter_show_follower_count: false
-twitter_tweet_button: true
+twitter_tweet_button: false
 
 #JiaThis Sharing 
 jiathis_share_button: true

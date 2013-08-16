@@ -7,9 +7,6 @@ footer: false
 Wenbin Ma
 --------------
 
-### 职业
-码农
-
 ### 方向
 - Node.js
 - HTML5 应用开发
@@ -20,10 +17,6 @@ Wenbin Ma
 - HTML5 应用开发
 - 服务器开发
 
-### 讨厌
-
-- Java
-
 ### 语言技能
 
 - C & C++
@@ -31,7 +24,7 @@ Wenbin Ma
 - Node.js
 
 ### 爱好
-
-- 电影
+- 羽毛球
 - 骑车
 - F1
+- 电影
